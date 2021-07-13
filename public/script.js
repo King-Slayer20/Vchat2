@@ -109,7 +109,7 @@ const muteUnmute = () => {
 
 const setUnmuteButton = () => {
   const html = `<i class="fas fa-microphone"></i>`;
-  document.querySelector('.mute').innerHTML = html;
+  document.querySelector('.Mute__button').innerHTML = html;
   $("#mute").attr("title", "Mute");
 }
 
