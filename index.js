@@ -5,27 +5,17 @@ const io = require('socket.io')(server);
 const { v4: uuidV4 } = require('uuid');
 const userS = [], userI = [];
 var nodemailer = require('nodemailer');
-// const ExpressPeerServer = require('peer').ExpressPeerServer;
-// const peerServer = ExpressPeerServer(server, {
-//   debug: true
-// });
-
-// // server.listen(3000, () =>{
-// // 	console.log("Serving port 3000");
-// // });
 
 // app.use('/peerjs', peerServer); //peerjs server living in express and runing at different ports
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-
-
  app.get('/', (req, res) =>{
-	res.render('front');  //send uuid to client address bar 
+	res.render('front');  //render the front page
  })
  app.get('/login.ejs', (req, res) =>{
-	res.render('login');  //send uuid to client address bar 
+	res.render('login');  //render the login page
  })
  
  app.get('/chat', (req, res) =>{
@@ -60,7 +50,7 @@ io.on('connection', (socket, yourName )=>{
 	    	}
 	    });
 
-		//code to massage in roomId
+		//code to message in roomId
 		socket.on('message', (message,yourName) =>{
 			io.to(roomId).emit('createMessage',message,yourName);
 		})

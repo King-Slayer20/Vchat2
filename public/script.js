@@ -1,69 +1,14 @@
 const socket = io('/');  //socket connection
-const videoGrid = document.getElementById('video-grid');
-const userDropDown = document.getElementById('myDropdown');
-const myVideo = document.createElement('video');
+const videoGrid = document.getElementById('video-grid'); //videos will be appended here
+const userDropDown = document.getElementById('myDropdown'); //this creates a drop down to view the users
+const myVideo = document.createElement('video'); // creating our video element
 myVideo.muted = true;
-let peers = {}, currentPeer = [];
+let peers = {}, currentPeer = []; //peer lists
 let userlist = [];
 let cUser;
-let users = [];
+let users = []; // array to store the name of different users
 
-let YourName = prompt("Please enter your name");
-// function name(){
-//   YourName = ;
-//   if(YourName  === ""){
-//     name();
-//   }
-// }
-
-//window.onload = promalert();
-// function promalert() {
-//   swal({
-//     title: "Enter your name",
-//     content: {
-//       element: "input",
-//       attributes: {
-//         placeholder: "Type your name",
-//         type: "input",
-//       },
-//     },
-//     showCancelButton: true,
-//     closeOnConfirm: false,
-//     animation: "slide-from-top",
-//   }).then((inputValue) => {
-//     if (inputValue == "") {
-//       redo();
-//     }
-//     console.log(inputValue);
-//     return inputValue;
-
-//   });
-// }
-// function redo() {
-//   swal({
-//     title: "You must enter a name",
-//     content: {
-//       element: "input",
-//       attributes: {
-//         placeholder: "Type your name",
-//         type: "input",
-//       },
-//     },
-//     icon: "warning",
-//     showCancelButton: true,
-//     closeOnConfirm: false,
-//     animation: "slide-from-top",
-//   }).then((inputValue) => {
-//     if (inputValue == "") {
-//       redo();
-//     }
-//     console.log(inputValue);
-//     return inputValue;
-
-//   });
-// }
-// let YourName = promalert();
-
+let YourName = prompt("Please enter your name");//User has to enter the name
 var peer = new Peer(undefined); //we undefine this because peer server create it's own user it
 
 let myVideoStream;
@@ -76,7 +21,6 @@ navigator.mediaDevices.getUserMedia({     //by using this we can access user dev
 
   peer.on('call', call => {               //here user system answer call and send there video stream to us
     var acceptsCall = confirm("Videocall incoming");
-    //users.push(YourName);
     if (acceptsCall) {
       console.log("answered");
       call.answer(stream);               //via this send video stream to caller
@@ -263,8 +207,6 @@ const invite = () => {
 const share = () => {
   var share = document.createElement('input'),
     text = window.location.href;
-
-  //console.log("hardik");
   console.log(text);
   document.body.appendChild(share);
   share.value = text;
@@ -290,16 +232,11 @@ socket.on('createMessage', (msg, user) => {
   //users.push(user);
   scrollToBottom();
 });
-// socket.on('aUser', (user) =>{
-//   users.push(user);
-// })
 
 const scrollToBottom = () => {
   var d = $('.main__chat_window');
   d.scrollTop(d.prop("scrollHeight"));
 }
-
-
 
 const screenshare = () => {
   navigator.mediaDevices.getDisplayMedia({
@@ -400,7 +337,6 @@ const anchoreUser = (userR) => {
 
 
 socket.on('all_users_inRoom', (userI, user) => {
-  //users.push(user);
   console.log(userI);
   userlist.splice(0, userlist.length);
   userlist.push.apply(userlist, userI);

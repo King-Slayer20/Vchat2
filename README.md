@@ -1,25 +1,23 @@
-# Video_conf_ScreenShare
+# Vchat
 
-requirements:
- 1. node.js,
- 2. peerjs, 
- 3. socket.io,
- 4. ejs
+This is a video calling web application that consists of various functions
 
-language i use to buid:
- 1. html
- 2. css
- 3. js
+Steps to install locally on your computer
+
+1. Using the CLI run "npm install"
+2. Now all the dependencies should have been installed, now run "node index.js"
+3. Now the local server is running at port 3000.
+4. In your browser go to "http://localhost:3000/"
  
-steps to start api:
-  1. step1: "open command line in your source code downloaded folder" 
-  
-  2. step2: npm install -"use this command to install all dependence"
-  
-  3. step3: "open two terminal or command line"
-  
-  4. step4: nodemon index.js "or" npm run devSart -"type this in first terminal to start local server"
-  
-  5. step5: peerjs --port 3001  -"to start peerjs server in your local enviroment": 
-  
-  6. step6: "open Browser and type"  localhost:3000   
+Now a brief overview of the functionalities included in the application
+1. Mute/Unmute video
+2. Mute/Unmute audio
+3. Screen sharing
+4. Invite using mail
+5. Authentication using firebase
+6. Real time chatting
+7. Raise hand
+8. See the names of the participants in the call
+9. Remove a participant from the meeting (Can only be done by the host)
+10. Directly copy the link to the call
+
