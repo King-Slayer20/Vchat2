@@ -108,16 +108,15 @@ const muteUnmute = () => {
 }
 
 const setUnmuteButton = () => {
-  const html = `<i class="fas fa-microphone"></i>
-                <span>Mute</span>`;
-  document.querySelector('.Mute__button').innerHTML = html;
-  console.log("You are Unmuted");
+  const html = `<i class="fas fa-microphone"></i>`;
+  document.querySelector('.mute').innerHTML = html;
+  $("#mute").attr("title", "Mute");
 }
 
 const setMuteButton = () => {
-  const html = `<i class="fas fa-microphone-slash" style="color:red;"></i>
-                <span>Unmute</span>`;
+  const html = `<i class="fas fa-microphone-slash" style="color:red;"></i>`;
   document.querySelector('.Mute__button').innerHTML = html;
+  $("#mute").attr("title", "Unmute");
   console.log("Muted");
 }
 
@@ -134,16 +133,16 @@ const videoOnOff = () => {
 }
 
 const setVideoButton = () => {
-  const html = `<i class="fas fa-video"></i>
-                <span>Stop Video</span>`;
+  const html = `<i class="fas fa-video"></i>`;
   document.querySelector('.Video__button').innerHTML = html;
+  $("#video").attr("title", "Stop video");
   console.log("Cammera Mode ON");
 }
 
 const unsetVideoButton = () => {
-  const html = `<i class="fas fa-video-slash" style="color:red;"></i>
-                <span>Start Video</span>`;
+  const html = `<i class="fas fa-video-slash" style="color:red;"></i>`;
   document.querySelector('.Video__button').innerHTML = html;
+  $("#video").attr("title", "Start video");
   console.log("Cammera Mode OFF");
 }
 
@@ -228,8 +227,8 @@ $('html').keydown((e) => {
 
 //Print msg in room
 socket.on('createMessage', (msg, user) => {
-  $('ul').append(`<li class= "message"><small>~${user}</small><br>${msg}</li>`);
-  //users.push(user);
+  $('ul').append(`<li class= "message"><div class = "use"><i>~${user}</i></div><span class = "msg">${msg}</span></li>`);
+  
   scrollToBottom();
 });
 
@@ -285,17 +284,14 @@ const raisedHand = () => {
 }
 
 const unChangeHandLogo = () => {
-  const html = `<i class="far fa-hand-paper" style="color:red;"></i>
-                <span>Raised</span>`;
+  const html = `<i class="far fa-hand-paper" style="color:red;"></i>`;
   document.querySelector('.raisedHand').innerHTML = html;
-  console.log("chnage")
   changeHandLogo();
 }
 
 const changeHandLogo = () => {
   setInterval(function () {
-    const html = `<i class="far fa-hand-paper" style="color:"white"></i>
-                <span>Hand</span>`;
+    const html = `<i class="far fa-hand-paper" style="color:"white"></i>`;
     document.querySelector('.raisedHand').innerHTML = html;
   }, 3000);
 }

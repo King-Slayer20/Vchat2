@@ -1,6 +1,9 @@
 # Vchat
 
 This is a video calling web application that consists of various functions
+Note: If running the website on mobile device , use landscape mode
+
+The application has been hosted on : https://v-chat-app-engage.herokuapp.com
 
 Steps to install locally on your computer
 
@@ -19,5 +22,5 @@ Now a brief overview of the functionalities included in the application
 7. Raise hand
 8. See the names of the participants in the call
 9. Remove a participant from the meeting (Can only be done by the host)
-10. Directly copy the link to the call
+10. Join with upto 10 people in the call
 

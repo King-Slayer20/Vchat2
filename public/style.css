@@ -14,7 +14,7 @@ video {
   object-fit: cover;
   border-radius: 5%;
   transform: rotateY(180deg);
-  padding: 10px;
+  padding: 3px;
   background-color: grey;
 }
 
@@ -74,7 +74,6 @@ video {
   flex-direction: column;
   background-color: whitesmoke;
   border-left: 1px solid #3d3d42;
-  border-radius: 5px;
 }
 .main__header {
   color: grey;
@@ -99,6 +98,30 @@ video {
 .messages {
   color: grey;
   list-style: none;
+}
+#chat_messages:focus{
+  outline: none;
+  border: none;
+  
+}
+#chat_messages{
+  background-color: rgba(24, 24, 24, 0.1);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+li .use{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 80%;
+}
+
+li .msg{
+  margin-bottom: 5px;
+  background: linear-gradient(to bottom right, #9439e3, #4badde);  
+  color:white;
+  padding: 6px;
+  border-radius: 10px;
 }
 
 /*Drop Down*/

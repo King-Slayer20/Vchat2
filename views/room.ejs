@@ -55,52 +55,41 @@
 			</div>
 			<div class="main__controls">
 				<div class="main__controls__block">
-					<div onclick="invite()" class="main__controls__button ">
-						<i class="fas fa-envelope-square" ></i>
-						<span>Mail Invite</span>
+					<div onclick="invite()" title = "Mail Invite" class="main__controls__button ">
+						<i class="fas fa-user-plus"></i>
 					</div>
-
 				</div>
 				<div class="main__controls__block">
 
-					<div onclick="muteUnmute()" class="main__controls__button Mute__button">
+					<div onclick="muteUnmute()" title = "Mute" id = "mute" class="main__controls__button Mute__button">
 						<i class="fas fa-microphone"></i>
-						<span>Mute</span>
 					</div>
-					<div onclick="videoOnOff()" class="main__controls__button Video__button">
+					<div onclick="videoOnOff()" title = "Stop Video" id = "video" class="main__controls__button Video__button">
 						<i class="fas fa-video"></i>
-						<span>Stop Video</span>
 					</div>
-					<div onclick= "disconnectNow()" class="main__controls__button main__leave" style=" color: Tomato;">
-						<a href="https://icons8.com/icon/20581/end-call"></a>
-						<img src="https://img.icons8.com/color/48/000000/end-call.png" />
+					<div onclick= "disconnectNow()" title = "End Call" class="main__controls__button main__leave" style=" color: Tomato;">
+						<i class="fas fa-phone-alt" style = "transform: rotate(135deg); color: red; font-size: 48px;"></i>
 					</div>
-					<div onclick="screenshare()" class="main__controls__button">
+					<div onclick="screenshare()" title = "Screen Share" class="main__controls__button">
 						<i class="fas fa-photo-video"></i>
-						<span>ScreenShare</span>
 					</div>
-					<div onclick="share()" class="main__controls__button">
+					<div onclick="share()" title = "Copy link" class="main__controls__button">
 						<i class="fa fa-share-alt"></i>
-						<span>Share</span>
 					</div>
 
 
 				</div>
 				<div class="main__controls__block">
-					<div onclick="raisedHand()" class="main__controls__button raisedHand">
+					<div onclick="raisedHand()"title = "Raise hand"  class="main__controls__button raisedHand">
 						<i class="far fa-hand-paper"></i>
-						<span>Hand</span>
 					</div>
 					<div class="main__controls__button">
 						<!-- remove -->
 						<div class="dropdown">
-							<i onclick="getUsers()" class="fas fa-user-friends dropbtn"></i>
-							<!-- <span>Participants</span> -->
+							<i onclick="getUsers()" title = "Show participants" class ="fas fa-user-friends dropbtn"></i>
 							<div id="myDropdown" class="dropdown-content">
-								<!-- ADD NEW <a> TAGS -->
 							</div>
 						</div>
-						<span>Participants</span>
 					</div>
 
 				</div>
@@ -111,7 +100,7 @@
 
 		<div class="main__right">
 			<div class="main__header">
-				<h6 style="padding: 15px 0;">Chat</h6><hr>
+				<h6 style="padding: 15px 0;"><i class="fas fa-comment-alt"></i> Chat</h6><hr>
 			</div>
 			<div class="main__chat_window">
 				<ul class="messages">
