@@ -79,7 +79,7 @@ io.on('connection', (socket, yourName )=>{
 				service: 'gmail',
 				auth: {
 				  user: 'noreply.vchat@gmail.com',
-				  pass: 'Vchat@123'
+				  pass: ''
 				}
 			  });
 			  
